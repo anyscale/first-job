@@ -1,0 +1,13 @@
+# check out job reference for all supported fields: https://docs.anyscale.com/reference/job-api#jobconfig
+
+name: my-first-job
+# use the default container image when empty
+image_uri:
+# use the default configuration of clusters when empty
+compute_config:
+# choose which directory to upload to Anyscale 
+working_dir: .
+# use the default Anyscale Cloud in your organization when empty
+cloud:
+entrypoint: python main.py
+max_retries: 1
