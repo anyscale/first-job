@@ -9,7 +9,7 @@ This tutorial shows you how to:
 
 ## When to use Anyscale Jobs
 
-We recommend running batch Ray apps as Anyscale Jobs if the following features are needed: 
+We recommend running [batch Ray apps](https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html) as Anyscale Jobs if the following features are needed: 
 - Automated failure handling and retries
 - Alerting
 - Programmatic submission API & CI/CD integration
@@ -29,7 +29,7 @@ You can submit jobs from any machines, using the Anyscale CLI or SDK. In this tu
 
 ### Step 1: install Anycale CLI and authenticate
 ```bash
-# Install Anyscale CLI
+# Install the lastet version of Anyscale CLI
 $ pip install -U anyscale
 # Authenticate
 $ anyscale login
