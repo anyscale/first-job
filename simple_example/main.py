@@ -1,12 +1,11 @@
 import os
 import ray
-import time
-
-print(f"The value of EXAMPLE_ENV_VAR is {os.environ['EXAMPLE_ENV_VAR']}.")
 
 
 @ray.remote
 def f(i):
+    # This print statement is running in a separate worker process.
+    print(f"The value of EXAMPLE_ENV_VAR is {os.environ['EXAMPLE_ENV_VAR']}.")
     return i ** 2
 
 
