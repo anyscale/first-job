@@ -1,15 +1,15 @@
+import os
 import ray
 import time
 
-num_ray_tasks = 5
+print(f"The value of EXAMPLE_ENV_VAR is {os.environ['EXAMPLE_ENV_VAR']}.")
 
-# Decorator to make a python function a Ray Task
+
 @ray.remote
-def process(x):
-   if x == (num_ray_tasks-1):
-      print("Hello from one of the Running Ray Tasks!")
-      time.sleep(200)
-   return x * 2
+def f(i):
+    return i ** 2
 
-result = ray.get([process.remote(x) for x in range(num_ray_tasks)])
-print("The job result is", result)
+
+# Execute 100 tasks across the cluster.
+results = ray.get([f.remote(i) for i in range(100)])
+print(results)
